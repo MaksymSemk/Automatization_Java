@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.cookieapp.CookieController">
+   <bottom>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="20.0" prefHeight="60.0" prefWidth="600.0" vgap="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="makeCookiesButton" mnemonicParsing="false" onAction="#makeCookies" text="Make cookies" />
+            <Button fx:id="buyCookiesButton" mnemonicParsing="false" onAction="#buyCookies" text="Buy cookies" />
+            <Button fx:id="buyMaterialsForCookiesButton" mnemonicParsing="false" onAction="#buyMaterialsForCookies" text="Buy materials for cookies" />
+            <Button fx:id="exportDataToJsonButton" mnemonicParsing="false" onAction="#exportDataToJson" text="Export data to json" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </FlowPane>
+   </bottom>
+   <top>
+      <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="20.0" prefHeight="64.0" prefWidth="600.0" vgap="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logInAsWorkerButton" mnemonicParsing="false" onAction="#logInAsWorker" text="Log in as Worker" />
+            <Button fx:id="logInAsConsumerButton" mnemonicParsing="false" onAction="#logInAsConsumer" text="Log in as Consumer" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <center>
+      <TextArea fx:id="factoryInfo" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
