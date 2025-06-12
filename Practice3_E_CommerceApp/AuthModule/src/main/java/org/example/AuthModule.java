@@ -53,19 +53,19 @@ class AuthModule {
         Date expirationDate = new Date(now.getTime() + EXPIRATION_TIME);
 
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(now)
-                .setExpiration(expirationDate)
+                .subject(username)
+                .issuedAt(now)
+                .expiration(expirationDate)
                 .signWith(SECRET_KEY)
                 .compact();
     }
     private static Date getExpirationDateFromToken(String token) {
         try {
             Claims claims = Jwts.parser()
-                    .setSigningKey(SECRET_KEY)
+                    .verifyWith(SECRET_KEY)
                     .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+                    .parseSignedClaims(token)
+                    .getPayload();
             return claims.getExpiration();
         } catch (Exception e) {
             return null;

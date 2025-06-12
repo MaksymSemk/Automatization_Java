@@ -1,5 +1,7 @@
 plugins {
     id("java")
+    id("com.example.my-binary-plugin")
+
 }
 
 group = "org.example"
@@ -9,9 +11,12 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation(gradleApi())
+
 }
 
 tasks.test {
