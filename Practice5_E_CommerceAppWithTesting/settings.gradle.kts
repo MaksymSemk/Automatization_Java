@@ -1,4 +1,4 @@
-rootProject.name = "Practice3_E_CommerceApp"
+rootProject.name = "Practice5_E_CommerceAppWithTesting"
 include("Backend")
 include("AuthModule")
 include("Frontend")
