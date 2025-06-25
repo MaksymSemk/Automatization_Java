@@ -40,7 +40,7 @@ class AuthModuleTest {
 
         assumeTrue(registered, "User was not registered, skipping login test");
 
-       assertNotNull(AuthModule.login("user3", "1"));
+        assertNotNull(AuthModule.login("user3", "1"));
     }
 
     @Tag("Login")
