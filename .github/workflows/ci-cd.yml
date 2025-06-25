@@ -7,10 +7,24 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  checkstyle:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run Checkstyle (Gradle)
+      - uses: actions/checkout@v4
+
+      - name: Show structure
+        run: ls -l
+      
+      - name: Set up Java
+        uses: actions/setup-java@v3.14.1
+        with:
+          distribution: 'microsoft'
+          java-version: '21'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+        working-directory: ./Practice5_E_CommerceAppWithTesting
+      - name: Run Checkstyle
         run: ./gradlew checkstyleMain
-        working-directory: Practice5_E_CommerceAppWithTesting
+        working-directory: ./Practice5_E_CommerceAppWithTesting
