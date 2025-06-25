@@ -2,8 +2,10 @@ name: Java CI/CD Release
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
       
 permissions:
   contents: write
