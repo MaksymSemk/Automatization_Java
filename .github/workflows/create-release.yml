@@ -48,6 +48,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ecommerse-jar
+          path: jar-output
 
       - name: Create GitHub Release
         id: create_release
@@ -71,5 +72,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./jar-output
           asset_name: E-CommerseApp.jar
           asset_content_type: application/java-archive
