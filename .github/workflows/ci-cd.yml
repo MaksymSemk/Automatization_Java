@@ -1,0 +1,16 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Checkstyle (Gradle)
+        run: ./gradlew checkstyleMain
+        working-directory: Practice5_E_CommerceAppWithTesting
