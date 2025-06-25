@@ -7,12 +7,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  checkstyle:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show root
+      - uses: actions/checkout@v4
+
+      - name: Show structure
         run: ls -l
-      
-      - name: Show Automatization_Java
-        run: ls -l Automatization_Java
