@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ecommerse-jar
-          path: ./Practice5_E_CommerceAppWithTesting/build/libs/*.jar
+          path: ./Practice5_E_CommerceAppWithTesting/Frontend/build/libs/*.jar
 
   release:
     runs-on: ubuntu-latest
