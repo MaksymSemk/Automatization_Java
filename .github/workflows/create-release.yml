@@ -64,7 +64,7 @@ jobs:
             Automatically created release ${{ github.ref_name }}
 
       - name: List downloaded files
-        run: ls -l
+        run: ls -la jar-output/
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
@@ -72,6 +72,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./jar-output
+          asset_path: ./jar-output/E-CommerseApp-all.jar
           asset_name: E-CommerseApp.jar
           asset_content_type: application/java-archive
