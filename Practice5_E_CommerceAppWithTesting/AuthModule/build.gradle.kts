@@ -12,6 +12,7 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.junit.platform:junit-platform-suite")
     implementation("io.jsonwebtoken:jjwt-api:0.12.3")
     runtimeOnly ("io.jsonwebtoken:jjwt-impl:0.12.3")
     runtimeOnly ("io.jsonwebtoken:jjwt-jackson:0.12.3")
