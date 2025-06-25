@@ -63,16 +63,7 @@ jobs:
             Automatically created release ${{ github.ref_name }}
 
       - name: List downloaded files
-        run: ls -l Practice5_E_CommerceAppWithTesting
-
-      - name: List downloaded files
         run: ls -l Practice5_E_CommerceAppWithTesting/Frontend
-
-      - name: List downloaded files
-        run: ls -l Practice5_E_CommerceAppWithTesting/Frontend/build
-
-      - name: List downloaded files
-          run: ls -l Practice5_E_CommerceAppWithTesting/Frontend/build/libs
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
