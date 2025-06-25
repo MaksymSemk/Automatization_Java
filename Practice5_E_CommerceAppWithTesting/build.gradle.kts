@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("com.example.my-binary-plugin")
+    checkstyle
 
 }
 
@@ -21,4 +22,17 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+checkstyle {
+    toolVersion = "10.12.1"
+    configFile = file("config/checkstyle/checkstyle.xml")
+    isIgnoreFailures = false
+}
+
+tasks.withType<Checkstyle> {
+    reports {
+        xml.required.set(false)
+        html.required.set(true)
+    }
 }
