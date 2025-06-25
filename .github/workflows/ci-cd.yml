@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Run Checkstyle (Gradle)
         run: ./gradlew checkstyleMain
-        working-directory: ./Practice5_E_CommerceAppWithTesting
+        working-directory: Practice5_E_CommerceAppWithTesting
