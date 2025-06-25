@@ -1,4 +1,4 @@
-name: Checkstyle
+name: Java CI/CD
 
 on:
   push:
@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: E-CommerseApp
-          path: ./Practice5_E_CommerceAppWithTesting/build/libs/*.jar
+          path: ./Practice5_E_CommerceAppWithTesting/Frontend/build/libs/*.jar
