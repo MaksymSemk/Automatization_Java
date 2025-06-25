@@ -28,3 +28,13 @@ jobs:
       - name: Run Checkstyle
         run: ./gradlew checkstyleMain
         working-directory: ./Practice5_E_CommerceAppWithTesting
+
+      - name: Build JAR
+        run: ./gradlew jar
+        working-directory: ./Practice5_E_CommerceAppWithTesting
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: E-CommerseApp
+          path: ./Practice5_E_CommerceAppWithTesting/builds/*.jar
