@@ -63,7 +63,7 @@ jobs:
             Automatically created release ${{ github.ref_name }}
 
       - name: List downloaded files
-        run: ls -l Practice5_E_CommerceAppWithTesting/Frontend
+        run: ls -l Practice5_E_CommerceAppWithTesting
 
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
@@ -71,6 +71,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./Practice5_E_CommerceAppWithTesting/Frontend/build/libs/E-CommerseApp.jar
+          asset_path: ./E-CommerseApp.jar
           asset_name: E-CommerseApp.jar
           asset_content_type: application/java-archive
