@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Run Checkstyle (Gradle)
         run: ./gradlew checkstyleMain
-        working-directory: /home/runner/work/Automatization_Java/Practice5_E_CommerceAppWithTesting
+        working-directory: /home/runner/work/Automatization_Java/Automatization_Java/Practice5_E_CommerceAppWithTesting
