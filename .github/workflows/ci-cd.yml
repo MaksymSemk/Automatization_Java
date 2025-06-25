@@ -13,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Show structure
-        run: ls -l
-      
       - name: Set up Java
         uses: actions/setup-java@v3.14.1
         with:
@@ -25,16 +22,35 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x gradlew
         working-directory: ./Practice5_E_CommerceAppWithTesting
+
       - name: Run Checkstyle
         run: ./gradlew checkstyleMain
+        working-directory: ./Practice5_E_CommerceAppWithTesting
+
+  build:
+    runs-on: ubuntu-latest
+    needs: checkstyle 
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v3.14.1
+        with:
+          distribution: 'microsoft'
+          java-version: '21'
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
         working-directory: ./Practice5_E_CommerceAppWithTesting
 
       - name: Build JAR
         run: ./gradlew shadowJar
         working-directory: ./Practice5_E_CommerceAppWithTesting
 
-      - name: Upload JAR
+      - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: E-CommerseApp
-          path: ./Practice5_E_CommerceAppWithTesting/Frontend/build/libs/*.jar
+          path: ./Practice5_E_CommerceAppWithTesting/build/libs/*.jar
+
