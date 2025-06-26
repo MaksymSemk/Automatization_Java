@@ -10,10 +10,6 @@
 
     <module name="TreeWalker">
         <module name="MethodName"/>
-        <!--<module name="SuppressionXpathSingleFilter">
-            <property name="checks" value="MethodName"/>
-            <property name="query" value="//METHOD_DEF[./MODIFIERS/ANNOTATION/IDENT[matches(@text, '^(Test|ParameterizedTest|RepeatedTest|TestFactory|TestTemplate)$')]]"/>
-        </module>-->
         <module name="ParameterName"/>
         <module name="LocalVariableName"/>
     </module>
