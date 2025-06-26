@@ -1,8 +1,7 @@
 plugins {
     id("java")
     id("com.example.my-binary-plugin")
-    checkstyle
-
+    id("checkstyle")
 }
 
 group = "org.example"
@@ -25,9 +24,8 @@ tasks.test {
 }
 
 checkstyle {
-    toolVersion = "10.12.1"
+    toolVersion = "10.15.0"
     configFile = file("config/checkstyle/checkstyle.xml")
-    isIgnoreFailures = false
 }
 
 tasks.withType<Checkstyle> {
