@@ -23,14 +23,22 @@ tasks.test {
     useJUnitPlatform()
 }
 
-checkstyle {
-    toolVersion = "10.15.0"
-    configFile = file("config/checkstyle/checkstyle.xml")
-}
+subprojects {
+    apply(plugin = "checkstyle")
 
-tasks.withType<Checkstyle> {
-    reports {
-        xml.required.set(false)
-        html.required.set(true)
+    configure<CheckstyleExtension> {
+        toolVersion = "10.12.4"
+        configFile = rootProject.file("config/checkstyle/checkstyle.xml")
+        isIgnoreFailures = false
+        maxWarnings = 0
+        maxErrors = 0
+    }
+
+    tasks.withType<Checkstyle> {
+        reports {
+            xml.required.set(false)
+            html.required.set(true)
+            html.outputLocation.set(file("$buildDir/reports/checkstyle/main.html"))
+        }
     }
 }
